@@ -1,4 +1,8 @@
 /* CSS arreglado por Claude por decimocuarta vez */
+* {
+  overflow-x: hidden !important;
+}
+
 :root {
   --color-primary: #8B4513;
   --color-secondary: #654321;
@@ -52,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   padding-top: 80px;
-  overflow-x: hidden;
+  width: 100%;
 }
 
 .hero-overlay {
