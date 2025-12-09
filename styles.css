@@ -182,6 +182,11 @@ html {
   scroll-behavior: smooth; /* Aún sin esto se siente suave? Con esto se siente más lageado? Pendiente revisar otros valores */
 }
 
+
+/* Hero margen arreglo de último momento */
+.margin-left-md { margin-left: 1em;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero-section {
@@ -196,6 +201,8 @@ html {
     font-size: 2rem;
   }
 }
+
+
 
 /* Animations */
 @keyframes fadeUp {                  /* No es necesario detallar cada keyframe línea por línea al parecer. Pendiente investigar más formas nuevas como esta */
