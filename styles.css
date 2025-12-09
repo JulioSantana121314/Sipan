@@ -1,7 +1,5 @@
 /* CSS arreglado por Claude por decimocuarta vez */
-* {
-  overflow-x: hidden !important;
-}
+
 
 :root {
   --color-primary: #8B4513;
@@ -9,6 +7,7 @@
   --color-accent: #D2691E;
   --color-gold: #FFD700;
   --color-light: #F5F5DC;
+  overflow-x: hidden;
 }
 
 /* Fuente */
