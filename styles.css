@@ -1,0 +1,214 @@
+/* CSS arreglado por Claude por decimocuarta vez */
+:root {
+  --color-primary: #8B4513;
+  --color-secondary: #654321;
+  --color-accent: #D2691E;
+  --color-gold: #FFD700;
+  --color-light: #F5F5DC;
+}
+
+/* Fuente */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Nav */
+.navbar {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95) !important;       /* Important para que no lo sobrescriban supuestamente */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+  color: var(--color-primary) !important;
+}
+
+.nav-link {
+  color: #333 !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  margin: 0 0.5rem;
+}
+
+.nav-link:hover {
+  color: var(--color-primary) !important;
+}
+
+/* Hero (aún no sé qué significa) */
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+  background-image: url('https://www.peru.travel/Contenido/General/Imagen/es/635/1.1/kingkong-postre.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  overflow-x: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(101, 67, 33, 0.9), rgba(101, 67, 33, 0.7), transparent); /* Dolor de cabeza */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  padding: 3rem 0;
+}
+
+
+
+/* Botones */
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+}
+
+.btn-outline-light:hover {
+  background-color: white;
+  color: var(--color-secondary) !important;
+}
+
+/* Product Cards (kingkonges/kingkones) */
+.product-card {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1/1;  /* Fuerza forma cuadrada mejor que croppeándola a lo bestia. */
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;  /* Ease = Lento rápido lento */
+}
+
+.product-card:hover img {
+  transform: scale(1.1);   /* Agranda a 1.1x*/
+}
+
+.card-img-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(101, 67, 33, 0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* .product-card:hover .card-img-wrapper::after {           No me termina de convencer. Pendiente investigar más filtros
+  opacity: 1; 
+} */
+
+/* Acerca de */
+.about-image-box {
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(255, 215, 0, 0.1));      /* 🤯 */
+  border: 2px solid rgba(139, 69, 19, 0.1);
+  position: relative;
+}
+
+.about-image-box::before {
+  content: '';
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 215, 0, 0.2);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+                                                /* Brillitos en las esquinas */
+.about-image-box::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: -1rem;
+  width: 120px;
+  height: 120px;
+  background: rgba(139, 69, 19, 0.2);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+/* Badges/Headings/Labels/miniEncabezados */
+.badge {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Colores de texto */
+.text-primary {
+  color: var(--color-primary) !important;  
+}
+
+.text-warning {
+  color: var(--color-gold) !important;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth; /* Aún sin esto se siente suave? Con esto se siente más lageado? Pendiente revisar otros valores */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 100vh;
+  }
+  
+  .display-1 {
+    font-size: 3rem;
+  }
+  
+  .display-4 {
+    font-size: 2rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeUp {                  /* No es necesario detallar cada keyframe línea por línea al parecer. Pendiente investigar más formas nuevas como esta */
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content > div {                /* Selecciona a todos los elementos div que sean hijos directos de elementos con clase .hero-content. Muy interesante, no sabría usarlo en la práctica. Pendiente investigar más sobre esto y demás operadores/selectores */
+  animation: fadeUp 1s ease-out;
+}
