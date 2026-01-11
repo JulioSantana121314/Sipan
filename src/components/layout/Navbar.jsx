@@ -5,15 +5,16 @@ const Navbar = () => {
   const { cartCount } = useCart();
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.bootstrap) {
-    }
   }, []);
 
   const handleCartClick = () => {
     const modalElement = document.getElementById('cartModal');
+    
     if (modalElement && window.bootstrap) {
       const modal = new window.bootstrap.Modal(modalElement);
       modal.show();
+    } else {
+      console.error('Bootstrap no disponible o modal no encontrado');
     }
   };
 
