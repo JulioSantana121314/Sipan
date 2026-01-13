@@ -40,10 +40,10 @@ const CheckoutModal = () => {
             <div className="mb-4">
               <span style={{ fontSize: '5rem' }}>😊</span>
             </div>
-            <h3 className="fw-bold mb-3">¡Casi casi!</h3>
+            <h3 className="fw-bold mb-3">Gracias por tu preferencia!</h3>
             <p className="text-muted fs-5">
               Aquí te llevaría a una pasarela de pago...<br />
-              <strong>¡Si tuviera una!</strong>
+              <strong>Si tuviera una!</strong>
             </p>
           </div>
           <div className="modal-footer border-0 justify-content-center">
